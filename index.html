@@ -104,6 +104,12 @@ window.addEventListener('scroll', () => {
   });
 </script>
 
+<script>
+  // Add dark mode class when the page loads
+  document.addEventListener("DOMContentLoaded", function() {
+    document.body.classList.add("dark-mode");
+  });
+</script>
 
   <!-- Your existing links (KEEP THEM HERE) -->
   <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon"/>
@@ -502,12 +508,7 @@ window.addEventListener('scroll', () => {
       <a class="navbar-brand" href="index.html">
         <img src="images/logo.png" alt="Logo">
       </a>
-     <button class="navbar-toggler custom-toggler" type="button" 
-        data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
-  <span class="toggler-icon"></span>
-  <span class="toggler-icon"></span>
-  <span class="toggler-icon"></span>
-</button>
+     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu"> <span class="navbar-toggler-icon"></span> </button>
 
 <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu">
   <div class="offcanvas-header">
@@ -561,7 +562,7 @@ window.addEventListener('scroll', () => {
                   <p class="fs-4">
                     We bridge top-paying advertisers with our strong network of publisher partners, creating powerful opportunities for growth and revenue.
                   </p>
-                  <a href="about.html" class="btn hero-btn btn-outline-light">
+                  <a href="our-story.html" class="btn hero-btn btn-outline-light">
                     Learn more
                   </a>
                 </div>
@@ -711,7 +712,7 @@ window.addEventListener('scroll', () => {
               long-term sustainable growth for your business. A well-structured CPA program enhances
               conversions, expands brand visibility, and contributes to consistent revenue generation.
             </p>
-            <h3 >Web Designing</h3>
+            <h3  class="about-number">Web Designing</h3>
             <p>
               We create modern, responsive, and user-friendly websites that help businesses stand out online.
                Our web designing services focus on clean layouts, attractive visuals, smooth navigation, and a strong user experience to ensure your visitors stay engaged.
