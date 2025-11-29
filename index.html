@@ -5,6 +5,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>JPclicks</title>
+  
+  <link rel="preload" href="./images/slide1.jpg" as="image">
+  <link rel="preload" href="./images/slide2.jpg" as="image">
+  <link rel="preload" href="./images/slide3.jpg" as="image">
+  <link rel="preload" href="./images/slide4.jpg" as="image">
+
 
   <!-- ADD SEO TAGS HERE -->
   <!-- SEO Meta Tags -->
@@ -41,7 +47,63 @@
     "description": "Affiliate marketing, CPA marketing, landing page creation, web designing and digital marketing services."
   }
   </script>
+    <script>
+    // If user never chose a theme, set dark as default
+    if (!localStorage.getItem("theme")) {
+        localStorage.setItem("theme", "dark");
+    }
+
+    // Apply theme at page load
+    if (localStorage.getItem("theme") === "dark") {
+        document.documentElement.classList.add("dark-mode");
+    }
+  </script>
   <!-- END SEO TAGS -->
+   <script>
+  const reveals = document.querySelectorAll(".reveal");
+
+  function revealOnScroll() {
+    for (let i = 0; i < reveals.length; i++) {
+      let windowHeight = window.innerHeight;
+      let elementTop = reveals[i].getBoundingClientRect().top;
+      let elementVisible = 100;
+
+      if (elementTop < windowHeight - elementVisible) {
+        reveals[i].classList.add("active");
+      }
+    }
+  }
+
+  window.addEventListener("scroll", revealOnScroll);
+  revealOnScroll();
+</script>
+
+<script>
+const elements = document.querySelectorAll('.reveal');
+
+window.addEventListener('scroll', () => {
+  elements.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight - 50) {
+      el.classList.add('show');
+    }
+  });
+});
+</script>
+
+<script>
+  const toggler = document.querySelector('.custom-toggler');
+  const offcanvas = document.getElementById('mobileMenu');
+
+  offcanvas.addEventListener('show.bs.offcanvas', () => {
+    toggler.classList.add('active');
+  });
+
+  offcanvas.addEventListener('hide.bs.offcanvas', () => {
+    toggler.classList.remove('active');
+  });
+</script>
+
 
   <!-- Your existing links (KEEP THEM HERE) -->
   <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon"/>
@@ -440,19 +502,26 @@
       <a class="navbar-brand" href="index.html">
         <img src="images/logo.png" alt="Logo">
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-  <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-  <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-  <li class="nav-item"><a class="nav-link" href="our-story.html">Our Story</a></li>
-  <li class="nav-item"><a class="nav-link" href="publishers.html">Publishers</a></li>
-  <li class="nav-item"><a class="nav-link" href="advertisers.html">Advertisers</a></li>
-  <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+     <button class="navbar-toggler custom-toggler" type="button" 
+        data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+  <span class="toggler-icon"></span>
+  <span class="toggler-icon"></span>
+  <span class="toggler-icon"></span>
+</button>
 
+<div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title">Menu</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+
+  <div class="offcanvas-body">
+    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="our-story.html">Our Story</a></li>
+          <li class="nav-item"><a class="nav-link" href="publishers.html">Publishers</a></li>
+          <li class="nav-item"><a class="nav-link" href="advertisers.html">Advertisers</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
           <li class="nav-item me-lg-1 ms-lg-1 mb-md-1 mb-sm-1 mb-cs">
             <a href="#" class="nav-link fw-bold shadow btn btn-info text-white btn-sm pd-btn"
               data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-whatever="@getbootstrap">Login</a>
@@ -488,7 +557,7 @@
                   <h4 class="fw-light">
                     #Grow your business today with
                   </h4>
-                  <h1 class="fw-bolder main-heading">JPClicks</h1>
+                  <h1 class="section-title">JPClicks</h1>
                   <p class="fs-4">
                     We bridge top-paying advertisers with our strong network of publisher partners, creating powerful opportunities for growth and revenue.
                   </p>
@@ -572,10 +641,94 @@
     </div>
   </section>
 
+    <!-- ABOUT SECTION FULL CONTENT -->
+<section id="about" class="pt-5 pb-5 fade-in-section">
+  <div class="container text-center">
+
+    <h2 class="section-title">About <span>Us</span></h2>
+    <p class="section-icon"><i class="fa fa-user"></i></p>
+       
+      </div>
+      <div class="row mt-5 mt-md-2">
+        <div class="p-sm-3 col-md-5 col-sm-12 col-xs-12">
+          <div class="about-img w-100 h-100">
+            <img class="w-100" src="./images/about.png" alt="About" />
+          </div>
+        </div>
+        <div class="p-sm-3 col-md-7 col-sm-12 col-xs-12 mt-5 mt-md-2">
+          <div class="mt-3 mt-md-2 mt-lg-4">
+            <h3 class="about-number">About Us – The JPClicks</h3>
+            <p>
+              At The JPClicks, recognized as a <strong>Top Affiliate Marketing and Website Designing Agency</strong>,
+              we take pride in being one of Allahabad’s foremost digital solution providers.
+              We offer a complete suite of services including website design, development, and
+              performance-driven digital marketing. Our experienced and dedicated team works with precision
+              to create websites that not only stand out visually but also generate measurable results
+              for businesses of every scale.
+            </p>
+            <h4 class="about-number">01. Who are we?</h4>
+            <p>
+              Our journey began with a simple mission — to help brands build a strong and impactful presence online.
+              Over the years, we’ve grown into a trusted agency in Allahabad, known for our innovative design approach
+              and reliable development solutions. Our team consists of skilled designers, expert developers,
+              and digital marketing professionals who are passionate about creating modern, user-friendly,
+              and fully responsive websites. Whether you are a new startup or a large enterprise,
+              we have the creativity and technical expertise to turn your ideas into reality.
+            </p>
+            <h5 class="about-number">02. Get in Touch</h5>
+            <p>
+              If you’re ready to scale your affiliate marketing, CPA campaigns, or digital presence,
+              we’re here to support you. Contact us today to explore how our strategies can help you
+              achieve your goals and strengthen your brand's online performance. We look forward to
+              partnering with you on this exciting journey of growth.
+            </p>
+            <p>
+              At The JPClicks, we believe that even a single click can transform businesses
+              and create new opportunities. Join us — and let’s turn those clicks into real success.
+            </p>
+            
+          </div>
+        </div>
+      </div>
+      <div class="row mt-5 mt-md-2">
+        <div class="p-sm-3 col-md-5 col-sm-12 col-xs-12">
+          <div class="about-img w-100 h-100">
+            <img class="w-100" src="./images/about1.png" alt="About" />
+          </div>
+        </div>
+        <div class="p-sm-3 col-md-7 col-sm-12 col-xs-12 mt-5 mt-md-2">
+          <div class="mt-3 mt-md-2 mt-lg-4">
+            <h3 class="about-number">What Is Affiliate Marketing CPA?</h3>
+            <p>
+              Affiliate Marketing CPA (Cost Per Action) is a performance-based model where advertisers
+              pay affiliates for driving specific actions instead of simple clicks or impressions.
+              These actions may include purchases, sign-ups, registrations, lead submissions, or
+              other valuable conversions. CPA ensures advertisers pay only for measurable results,
+              making it one of the most cost-efficient and ROI-focused marketing strategies.
+            </p>
+            <p>
+              When implemented effectively, CPA marketing can generate high-quality traffic and
+              long-term sustainable growth for your business. A well-structured CPA program enhances
+              conversions, expands brand visibility, and contributes to consistent revenue generation.
+            </p>
+            <h3 >Web Designing</h3>
+            <p>
+              We create modern, responsive, and user-friendly websites that help businesses stand out online.
+               Our web designing services focus on clean layouts, attractive visuals, smooth navigation, and a strong user experience to ensure your visitors stay engaged.
+                Whether you need a portfolio, business website, or landing page, We combine creativity with the latest design practices to deliver a website that is fast, professional, and tailored to your brand. Let us turn your ideas into a stunning online presence that drives results.
+            </p>
+            <div>
+              <a class="pt-2 pb-2 pe-5 ps-5 mt-3 d-inline-block rounded-5 text-decoration-none text-bg-primary btn mb-3"
+                 href="contact.html">Contact Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <footer class="footer text-center py-5 text-sm">
-  <p>
-    &copy; 2023 JPClicks | Built with ❤️ for the modern web.
-  </p>
+    &copy; 2025 JPClickServices. All Rights Reserved.
   <div class="footer-links mt-2">
     <a href="terms.html" class="footer-link me-3">Terms &amp; Conditions</a>
     <a href="privacy-policy.html" class="footer-link">Privacy Policy</a>

@@ -1281,3 +1281,226 @@ body.dark-mode .footer-link:hover {
 .team-card .card-content::before {
   background: #ffffff !important;
 }
+.dark-mode {
+  background: #000;
+  color: #fff;
+}
+
+/* ------------------------------------
+   GLOBAL SMOOTHNESS + TRANSITIONS
+--------------------------------------*/
+* {
+  transition: all 0.35s ease-in-out !important;
+  scroll-behavior: smooth;
+}
+
+/* ------------------------------------
+   SMOOTH PAGE FADE-IN
+--------------------------------------*/
+body {
+  opacity: 0;
+  animation: fadeInPage 0.8s ease-in-out forwards;
+}
+
+@keyframes fadeInPage {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ------------------------------------
+   SECTIONS SLIDE-UP ON SCROLL
+--------------------------------------*/
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ------------------------------------
+   CARDS HOVER BOOST
+--------------------------------------*/
+.card,
+.team-card,
+.service-card {
+  transform: translateY(0);
+}
+
+.card:hover,
+.team-card:hover,
+.service-card:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 0 25px rgba(0,0,0,0.25);
+}
+
+/* ------------------------------------
+   BUTTON DELUXE EFFECT
+--------------------------------------*/
+.btn,
+button {
+  transform: scale(1);
+}
+
+.btn:hover,
+button:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 20px rgba(0, 105, 255, 0.4);
+}
+
+/* ------------------------------------
+   NAVBAR ANIMATION
+--------------------------------------*/
+.navbar {
+  transition: background 0.3s ease, padding 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(8px);
+  padding: 6px 0;
+}
+
+/* ------------------------------------
+   IMAGE ZOOM IN EFFECT
+--------------------------------------*/
+img:hover {
+  transform: scale(1.08);
+}
+
+/* ------------------------------------
+   LINK HOVER GLOW
+--------------------------------------*/
+a:hover {
+  text-shadow: 0 0 10px rgba(0,123,255,0.7);
+}
+
+/* ------------------------------------
+   TEXT FLOAT ANIMATION
+--------------------------------------*/
+.animate-text {
+  animation: floatText 3s ease-in-out infinite;
+}
+
+@keyframes floatText {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+/* ------------------------------------
+   SECTION ZOOM FADE ENTRANCE
+--------------------------------------*/
+.zoom-in {
+  animation: zoomIn 0.7s ease forwards;
+  opacity: 0;
+}
+
+@keyframes zoomIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* ULTRA Number Styling — Extra Small */
+.about-number {
+  font-size: 1.6rem;   /* Smaller */
+  font-weight: 800;
+  background: linear-gradient(45deg, #00eaff, #ff00f6, #00ff88);
+  background-clip: text;
+  color: transparent;
+
+  text-shadow:
+    0 0 5px rgba(0, 255, 255, 0.5),
+    0 0 10px rgba(255, 0, 255, 0.4),
+    0 0 15px rgba(0, 255, 136, 0.4);
+
+  animation: numberGlowSmall 2s infinite ease-in-out;
+  display: inline-block;
+}
+
+/* Smaller Glow Animation */
+@keyframes numberGlowSmall {
+  0% {
+    text-shadow:
+      0 0 5px rgba(0, 255, 255, 0.5),
+      0 0 10px rgba(255, 0, 255, 0.4),
+      0 0 15px rgba(0, 255, 136, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    text-shadow:
+      0 0 12px rgba(0, 255, 255, 0.9),
+      0 0 20px rgba(255, 0, 255, 0.8),
+      0 0 28px rgba(0, 255, 136, 0.8);
+    transform: scale(1.04);
+  }
+  100% {
+    text-shadow:
+      0 0 5px rgba(0, 255, 255, 0.5),
+      0 0 10px rgba(255, 0, 255, 0.4),
+      0 0 15px rgba(0, 255, 136, 0.4);
+    transform: scale(1);
+  }
+}
+
+/* Title Text */
+.about-title {
+  font-size: 0.95rem;     /* Smaller title */
+  font-weight: 700;
+  color: #0d6efd;
+}
+
+/* Align number + title nicely */
+.about-box {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* GLOBAL SECTION TITLE STYLE (apply to ALL sections) */
+.section-title {
+  font-size: 2.2rem;             /* smaller + premium */
+  font-weight: 800;
+  letter-spacing: 1px;
+
+  background: linear-gradient(45deg, #007bff, #00eaff);
+  background-clip: text;
+  color: transparent;
+
+  text-shadow: 
+    0 0 10px rgba(0, 123, 255, 0.5),
+    0 0 20px rgba(0, 234, 255, 0.4);
+
+  animation: titleGlow 3s ease-in-out infinite;
+  margin-bottom: 10px;
+}
+
+/* Small icon under the title */
+.section-icon {
+  font-size: 1.6rem;
+  color: #007bff;
+  text-shadow: 0 0 10px rgba(0, 123, 255, 0.6);
+  margin-top: -5px;
+}
+
+/* Glow Animation */
+@keyframes titleGlow {
+  0% {
+    text-shadow:
+      0 0 10px rgba(0, 123, 255, 0.5),
+      0 0 20px rgba(0, 234, 255, 0.4);
+  }
+  50% {
+    text-shadow:
+      0 0 20px rgba(0, 123, 255, 0.8),
+      0 0 40px rgba(0, 234, 255, 0.7);
+  }
+  100% {
+    text-shadow:
+      0 0 10px rgba(0, 123, 255, 0.5),
+      0 0 20px rgba(0, 234, 255, 0.4);
+  }
+}
