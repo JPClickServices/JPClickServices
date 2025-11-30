@@ -1392,106 +1392,6 @@ a:hover {
   100% { transform: scale(1); opacity: 1; }
 }
 
-/* ULTRA Number Styling — Extra Small */
-.about-number {
-  font-size: 1.6rem;   /* Smaller */
-  font-weight: 800;
-  background: linear-gradient(45deg, #00eaff, #ff00f6, #00ff88);
-  background-clip: text;
-  color: transparent;
-
-  text-shadow:
-    0 0 5px rgba(0, 255, 255, 0.5),
-    0 0 10px rgba(255, 0, 255, 0.4),
-    0 0 15px rgba(0, 255, 136, 0.4);
-
-  animation: numberGlowSmall 2s infinite ease-in-out;
-  display: inline-block;
-}
-
-/* Smaller Glow Animation */
-@keyframes numberGlowSmall {
-  0% {
-    text-shadow:
-      0 0 5px rgba(0, 255, 255, 0.5),
-      0 0 10px rgba(255, 0, 255, 0.4),
-      0 0 15px rgba(0, 255, 136, 0.4);
-    transform: scale(1);
-  }
-  50% {
-    text-shadow:
-      0 0 12px rgba(0, 255, 255, 0.9),
-      0 0 20px rgba(255, 0, 255, 0.8),
-      0 0 28px rgba(0, 255, 136, 0.8);
-    transform: scale(1.04);
-  }
-  100% {
-    text-shadow:
-      0 0 5px rgba(0, 255, 255, 0.5),
-      0 0 10px rgba(255, 0, 255, 0.4),
-      0 0 15px rgba(0, 255, 136, 0.4);
-    transform: scale(1);
-  }
-}
-
-/* Title Text */
-.about-title {
-  font-size: 0.95rem;     /* Smaller title */
-  font-weight: 700;
-  color: #0d6efd;
-}
-
-/* Align number + title nicely */
-.about-box {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-/* GLOBAL SECTION TITLE STYLE (apply to ALL sections) */
-.section-title {
-  font-size: 2.2rem;             /* smaller + premium */
-  font-weight: 800;
-  letter-spacing: 1px;
-
-  background: linear-gradient(45deg, #007bff, #00eaff);
-  background-clip: text;
-  color: transparent;
-
-  text-shadow: 
-    0 0 10px rgba(0, 123, 255, 0.5),
-    0 0 20px rgba(0, 234, 255, 0.4);
-
-  animation: titleGlow 3s ease-in-out infinite;
-  margin-bottom: 10px;
-}
-
-/* Small icon under the title */
-.section-icon {
-  font-size: 1.6rem;
-  color: #007bff;
-  text-shadow: 0 0 10px rgba(0, 123, 255, 0.6);
-  margin-top: -5px;
-}
-
-/* Glow Animation */
-@keyframes titleGlow {
-  0% {
-    text-shadow:
-      0 0 10px rgba(0, 123, 255, 0.5),
-      0 0 20px rgba(0, 234, 255, 0.4);
-  }
-  50% {
-    text-shadow:
-      0 0 20px rgba(0, 123, 255, 0.8),
-      0 0 40px rgba(0, 234, 255, 0.7);
-  }
-  100% {
-    text-shadow:
-      0 0 10px rgba(0, 123, 255, 0.5),
-      0 0 20px rgba(0, 234, 255, 0.4);
-  }
-}
 
 /* Animated Hamburger (Transforms to X) */
 .custom-toggler {
@@ -1531,5 +1431,59 @@ a:hover {
   border-radius: 10px;
   padding: 15px;
   display: inline-block;
+}
+
+/* -----------------------
+   Text Glow (no color change)
+   ----------------------- */
+
+/* 1) Subtle glow - barely there */
+.glow-subtle {
+  text-shadow: 0 2px 6px rgba(0,0,0,0.18);
+}
+
+/* 2) Medium glow - visible but natural */
+.glow-medium {
+  text-shadow:
+    0 2px 8px rgba(0,0,0,0.22),
+    0 0 10px rgba(13,110,253,0.12);
+}
+
+/* 3) Strong glow - bright halo (keeps original color) */
+.glow-strong {
+  text-shadow:
+    0 2px 8px rgba(0,0,0,0.25),
+    0 0 14px rgba(13,110,253,0.22),
+    0 0 28px rgba(13,110,253,0.14);
+}
+
+/* 4) Hover glow - grows on hover (keeps color) */
+.glow-hover {
+  transition: text-shadow 0.28s ease;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.18);
+}
+.glow-hover:hover {
+  text-shadow:
+    0 2px 10px rgba(0,0,0,0.28),
+    0 0 18px rgba(13,110,253,0.22);
+}
+
+/* 5) Pulse glow - subtle breathing animation */
+.glow-pulse {
+  text-shadow:
+    0 2px 8px rgba(0,0,0,0.22),
+    0 0 10px rgba(13,110,253,0.12);
+  animation: glowPulse 2.8s ease-in-out infinite;
+}
+@keyframes glowPulse {
+  0%   { text-shadow: 0 2px 8px rgba(0,0,0,0.22), 0 0 10px rgba(13,110,253,0.06); transform: scale(1); }
+  50%  { text-shadow: 0 2px 12px rgba(0,0,0,0.28), 0 0 22px rgba(13,110,253,0.20); transform: scale(1.02); }
+  100% { text-shadow: 0 2px 8px rgba(0,0,0,0.22), 0 0 10px rgba(13,110,253,0.06); transform: scale(1); }
+}
+
+/* Utility: reduce glow (for small text) */
+.glow-small {
+  text-shadow: 0 1px 4px rgba(0,0,0,0.12), 0 0 6px rgba(13,110,253,0.06);
+  font-weight: 600;
 }
 
