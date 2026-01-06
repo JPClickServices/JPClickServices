@@ -1,34 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>JPClicks</title>
+  <!-- Basic Meta -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Preload images -->
-  <link rel="preload" href="./images/slide1.jpg" as="image">
-  <link rel="preload" href="./images/slide2.jpg" as="image">
-  <link rel="preload" href="./images/slide3.jpg" as="image">
-  <link rel="preload" href="./images/slide4.jpg" as="image">
+  <title>JP Click Services | Affiliate Marketing & Web Designing</title>
 
-  <!-- Favicon & Apple Touch Icon -->
-  <link rel="icon" type="image/x-icon" href="https://jpclickservices.com/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="https://jpclickservices.com/images/favicon.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="https://jpclickservices.com/images/logo5-apple.png">
+  <!-- Canonical -->
+  <link rel="canonical" href="https://jpclickservices.com/">
 
+  <!-- Favicon (Google Friendly) -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
   <!-- SEO Meta Tags -->
-  <meta name="title" content="JP Click Services | Affiliate Marketing & Web Designing" />
-  <meta name="description" content="JP Click Services is your trusted partner for affiliate marketing, CPA marketing, landing page creation, and professional web designing services. We help businesses grow with high-converting digital solutions, optimized user experiences, and performance-driven strategies."/>
-  <meta name="keywords" content="affiliate marketing, CPA marketing, web designing, website development, landing page design, digital marketing, JP Click Services" />
-  <meta name="robots" content="index, follow" />
+  <meta name="description" content="JP Click Services is your trusted partner for affiliate marketing, CPA marketing, landing page creation, and professional web designing services. We help businesses grow with high-converting digital solutions, optimized user experiences, and performance-driven strategies.">
+  <meta name="keywords" content="affiliate marketing, CPA marketing, web designing, website development, landing page design, digital marketing, JP Click Services">
+  <meta name="robots" content="index, follow">
   <meta http-equiv="Content-Language" content="en">
-  <link rel="canonical" href="https://jpclickservices.com/"/>
 
   <!-- Open Graph -->
   <meta property="og:title" content="JP Click Services | Affiliate Marketing & Web Designing">
-  <meta property="og:description" content="Professional affiliate marketing, CPA marketing, landing page creation, and web designing services to grow your business online." />
+  <meta property="og:description" content="Professional affiliate marketing, CPA marketing, landing page creation, and web designing services to grow your business online.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://jpclickservices.com/">
   <meta property="og:image" content="https://jpclickservices.com/images/logo4-opengraph.png">
@@ -39,83 +33,38 @@
   <meta name="twitter:description" content="Professional affiliate marketing, CPA marketing, landing page creation, and web designing services.">
   <meta name="twitter:image" content="https://jpclickservices.com/images/logo4-opengraph.png">
 
-  <!-- Schema.org / JSON-LD for Logo -->
+  <!-- Preload Images -->
+  <link rel="preload" href="/images/slide1.jpg" as="image">
+  <link rel="preload" href="/images/slide2.jpg" as="image">
+  <link rel="preload" href="/images/slide3.jpg" as="image">
+  <link rel="preload" href="/images/slide4.jpg" as="image">
+
+  <!-- CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "JP Click Services",
     "url": "https://jpclickservices.com",
-    "logo": "https://jpclickservices.com/favicon.ico",
-    "sameAs": [
-      "https://www.facebook.com/",
-      "https://www.instagram.com/",
-      "https://www.linkedin.com/"
-    ]
+    "logo": "https://jpclickservices.com/favicon.ico"
   }
   </script>
-    <script>
-    // If user never chose a theme, set dark as default
+
+  <!-- Theme Init (safe in head) -->
+  <script>
     if (!localStorage.getItem("theme")) {
-        localStorage.setItem("theme", "dark");
+      localStorage.setItem("theme", "dark");
     }
-
-    // Apply theme at page load
     if (localStorage.getItem("theme") === "dark") {
-        document.documentElement.classList.add("dark-mode");
+      document.documentElement.classList.add("dark-mode");
     }
   </script>
 
-  <!-- END SEO TAGS -->
-   <script>
-  const reveals = document.querySelectorAll(".reveal");
-
-  function revealOnScroll() {
-    for (let i = 0; i < reveals.length; i++) {
-      let windowHeight = window.innerHeight;
-      let elementTop = reveals[i].getBoundingClientRect().top;
-      let elementVisible = 100;
-
-      if (elementTop < windowHeight - elementVisible) {
-        reveals[i].classList.add("active");
-      }
-    }
-  }
-
-  window.addEventListener("scroll", revealOnScroll);
-  revealOnScroll();
-</script>
-
-<script>
-const elements = document.querySelectorAll('.reveal');
-
-window.addEventListener('scroll', () => {
-  elements.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    if (top < window.innerHeight - 50) {
-      el.classList.add('show');
-    }
-  });
-});
-</script>
-
-<script>
-  const toggler = document.querySelector('.custom-toggler');
-  const offcanvas = document.getElementById('mobileMenu');
-
-  offcanvas.addEventListener('show.bs.offcanvas', () => {
-    toggler.classList.add('active');
-  });
-
-  offcanvas.addEventListener('hide.bs.offcanvas', () => {
-    toggler.classList.remove('active');
-  });
-</script>
-
-  <!-- Your existing links (KEEP THEM HERE) -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" crossorigin="anonymous"/>
-  <link rel="stylesheet" href="style.css"/>
 </head>
 
 <body>
@@ -871,7 +820,58 @@ window.addEventListener('scroll', () => {
   </div>
 </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
   <script src="dark-mode.js"></script>
+
+<script>
+  // Reveal on scroll
+  const reveals = document.querySelectorAll(".reveal");
+
+  function revealOnScroll() {
+    for (let i = 0; i < reveals.length; i++) {
+      let windowHeight = window.innerHeight;
+      let elementTop = reveals[i].getBoundingClientRect().top;
+      let elementVisible = 100;
+
+      if (elementTop < windowHeight - elementVisible) {
+        reveals[i].classList.add("active");
+      }
+    }
+  }
+
+  window.addEventListener("scroll", revealOnScroll);
+  revealOnScroll();
+</script>
+
+<script>
+  const elements = document.querySelectorAll('.reveal');
+
+  window.addEventListener('scroll', () => {
+    elements.forEach(el => {
+      const top = el.getBoundingClientRect().top;
+      if (top < window.innerHeight - 50) {
+        el.classList.add('show');
+      }
+    });
+  });
+</script>
+
+<script>
+  const toggler = document.querySelector('.custom-toggler');
+  const offcanvas = document.getElementById('mobileMenu');
+
+  if (toggler && offcanvas) {
+    offcanvas.addEventListener('show.bs.offcanvas', () => {
+      toggler.classList.add('active');
+    });
+
+    offcanvas.addEventListener('hide.bs.offcanvas', () => {
+      toggler.classList.remove('active');
+    });
+  }
+</script>
+
 </body>
 </html>
